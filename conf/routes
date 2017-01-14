@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /play                       controllers.HomeController.routedToPlay()
+
+GET     /json                       controllers.HomeController.getJson()
+
+POST    /sendJson                   controllers.HomeController.receiveAndDBifyJson()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Home page
+GET     /                           controllers.HomeController.index(path="/")
+# Home page
+GET     /*path                           controllers.HomeController.index(path)
