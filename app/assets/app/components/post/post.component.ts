@@ -5,10 +5,9 @@ import { CommentsService } from '../../services/comments-service/comments.servic
 
 
 @Component({
-    selector: 'app-post',
     templateUrl: './post.component.html',
     styleUrls: ['./post.component.css'],
-    providers: [PostService, CommentsService]
+    
 })
 export class PostComponent implements OnInit {
 
