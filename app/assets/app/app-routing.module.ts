@@ -1,16 +1,20 @@
 import { NgModule }     from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { DefaultAppComponent } from "./app";
-import { HomeComponent } from "./components/home/home.component"
+
+import { HomepageComponent } from "./components/homepage/homepage.component"
 import { PostComponent } from "./components/post/post.component"
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-        { path: '', component: HomeComponent },
-        {
-        path: 'post/:id', component: PostComponent
-        }   
+      {
+        path: "",
+        component: HomepageComponent
+      },
+      {
+        path: "post/:id",
+        component: PostComponent
+      }
     ]
     )
   ],
@@ -18,7 +22,7 @@ import { PostComponent } from "./components/post/post.component"
     RouterModule
   ],
   providers: [
+
   ]
 })
-
 export class AppRoutingModule {}

@@ -3,11 +3,31 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { PostService } from '../../services/post-service/post.service';
 import { CommentsService } from '../../services/comments-service/comments.service';
 
-
 @Component({
-    templateUrl: './post.component.html',
-    styleUrls: ['./post.component.css'],
-    
+  template:  `
+  <div class="row">
+    <div class="col-md-12">
+        <h1>{{ posts?.title }}</h1>
+        <div>
+            {{ posts?.body }}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 col-md-push-6">
+                <h3>Comments ({{ comments.length }})</h3>
+                <div *ngFor="let comment of comments">
+                    <strong>{{ comment.email }}</strong> said: <br>
+                    <h4>{{ comment.name }}</h4>
+                    <p>{{ comment.body }}</p>
+                    <hr>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+  `
 })
 export class PostComponent implements OnInit {
 
