@@ -27,15 +27,10 @@ public Result routedToPlay() {
 
 public Result getJson() {
 
-        Login mostRecent = Login.find.where()
-                           .orderBy("date asc")
-                           .setMaxRows(1)
-                           .findUnique();
-
         ObjectNode result = Json.newObject();
-        result.put("name", mostRecent.name);
-        result.put("staff_member", String.valueOf(mostRecent.staffMember));
-        result.put("login_date", mostRecent.date.toString());
+        result.put("name", "Dummy Name");
+        result.put("staff_member", "Dummy Role");
+        result.put("login_date", new Date().toString());
         return ok(result);
 }
 
