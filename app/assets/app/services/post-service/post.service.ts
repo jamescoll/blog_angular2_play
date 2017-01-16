@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostService {
 
-endpoint = "https://jsonplaceholder.typicode.com/posts";
+endpoint = "http://localhost:9000/s_posts";
 
 
 constructor(private http: Http) { }

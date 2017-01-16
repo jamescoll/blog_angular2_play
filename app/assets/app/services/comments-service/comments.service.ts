@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CommentsService {
 
-endpoint = "https://jsonplaceholder.typicode.com/comments";
+endpoint = "http://localhost:9000/s_comments";
 
 constructor(private http: Http) { }
 

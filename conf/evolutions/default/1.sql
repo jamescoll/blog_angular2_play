@@ -3,16 +3,29 @@
 
 # --- !Ups
 
-create table login_info (
+create table blog_comment (
   id                            bigserial not null,
+  post_id                       integer,
   name                          varchar(255),
-  staff_member                  boolean,
-  date                          timestamp,
-  constraint pk_login_info primary key (id)
+  created                       timestamp,
+  email                         varchar(255),
+  body                          TEXT,
+  constraint pk_blog_comment primary key (id)
+);
+
+create table blog_post (
+  id                            bigserial not null,
+  user_id                       integer,
+  title                         varchar(255),
+  created                       timestamp,
+  body                          TEXT,
+  constraint pk_blog_post primary key (id)
 );
 
 
 # --- !Downs
 
-drop table if exists login_info cascade;
+drop table if exists blog_comment cascade;
+
+drop table if exists blog_post cascade;
 
