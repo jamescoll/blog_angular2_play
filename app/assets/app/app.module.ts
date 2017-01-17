@@ -10,7 +10,7 @@ import DefaultAppComponent from "./app"
 import { AppRoutingModule } from "./app-routing.module"
 import { HomepageComponent } from "./components/homepage/homepage.component"
 import { PostComponent } from "./components/post/post.component"
-import { JsonTestService } from "./services/json-test/json-test.service"
+import { LoggingService } from "./services/logging-service/logging.service"
 import { PostService } from "./services/post-service/post.service"
 import { CommentsService } from "./services/comments-service/comments.service"
 
@@ -29,7 +29,7 @@ import { CommentsService } from "./services/comments-service/comments.service"
   ],
   bootstrap: [DefaultAppComponent],
   providers: [
-    JsonTestService,
+    LoggingService,
     PostService,
     CommentsService
   ]

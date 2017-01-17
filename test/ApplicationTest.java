@@ -38,7 +38,7 @@ public class ApplicationTest {
     public void renderTemplate() {
         Content html = views.html.index.render();
         assertEquals("text/html", html.contentType());
-        assertTrue(html.body().contains("Your new application is ready."));
+        assertTrue(html.body().contains("Blog with Play and Angular 2"));
     }
 
 

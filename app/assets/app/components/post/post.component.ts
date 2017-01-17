@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PostService } from '../../services/post-service/post.service';
 import { CommentsService } from '../../services/comments-service/comments.service';
+import { LoggingService } from "../../services/logging-service/logging.service"
+
+import { LogLevel } from "../../models/loglevel"
 
 @Component({
   template:  `
@@ -38,8 +41,11 @@ export class PostComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private p: PostService,
-        private c: CommentsService
-    ) { }
+        private c: CommentsService,
+        private loggingService: LoggingService
+    ) {
+        this.loggingService.sendLogMessage(LogLevel.TRACE, "Client in PostComponent");
+     }
 
     ngOnInit() {
 
@@ -49,15 +55,16 @@ export class PostComponent implements OnInit {
 
 
             // Post
+            // todo fix issue with error reporting here we may need to return an error
             this.p.getPost(id).subscribe(
-                r => this.posts = r,
-                error => console.error('Error: ' + error)
+                r => this.posts = r
+               // error => console.error('Error: ' + error)
             );
 
             // Comments
             this.c.getCommentsByPostId(id).subscribe(
-                r => this.comments = r,
-                error => console.error('Error: ' + error)
+                r => this.comments = r
+                // error => console.error('Error: ' + error)
             );
 
         });

@@ -13,6 +13,16 @@ create table blog_comment (
   constraint pk_blog_comment primary key (id)
 );
 
+create table blog_log_message (
+  id                            bigserial not null,
+  timestamp                     timestamp,
+  log_level                     varchar(255),
+  log_message                   TEXT,
+  request_id                    varchar(255),
+  client_address                varchar(255),
+  constraint pk_blog_log_message primary key (id)
+);
+
 create table blog_post (
   id                            bigserial not null,
   user_id                       integer,
@@ -26,6 +36,8 @@ create table blog_post (
 # --- !Downs
 
 drop table if exists blog_comment cascade;
+
+drop table if exists blog_log_message cascade;
 
 drop table if exists blog_post cascade;
 
