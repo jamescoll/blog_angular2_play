@@ -66,6 +66,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    console.log("username", this.model.username);
+    console.log("password", this.model.password);
     this.loginService.login(JSON.stringify(this.model)).subscribe(
       result => {this.processLogin(result);}
     );

@@ -8,9 +8,8 @@ import models.*;
 
 public class HomeController extends Controller {
 
-        public Result index(String path) { 
+        public Result index(String path) {
             return ok( views.html.index.render());
-        }
 
-        
+        }
 }
