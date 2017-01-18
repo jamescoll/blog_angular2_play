@@ -3,6 +3,7 @@ import { RouterModule } from "@angular/router";
 
 import { HomepageComponent } from "./components/homepage/homepage.component"
 import { PostComponent } from "./components/post/post.component"
+import { LoginComponent } from "./components/login/login.component"
 
 @NgModule({
   imports: [
@@ -14,6 +15,10 @@ import { PostComponent } from "./components/post/post.component"
       {
         path: "post/:id",
         component: PostComponent
+      },
+      {
+        path: "login",
+        component: LoginComponent
       }
     ]
     )

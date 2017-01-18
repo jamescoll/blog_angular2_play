@@ -26,6 +26,8 @@ public class LoginController extends Controller {
     @BodyParser.Of(BodyParser.Json.class)
     public Result login() {
 
+        System.out.println("Got here");
+
         JsonNode json = request().body().asJson();
         String username = json.findPath("username").textValue();
         String password = json.findPath("password").textValue();
