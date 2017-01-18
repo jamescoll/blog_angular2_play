@@ -10,6 +10,7 @@ export class PostService {
 endpoint = "http://localhost:9000/s_posts";
 
 
+
 constructor(private http: Http, private loggingService: LoggingService) { 
     this.loggingService.sendLogMessage(LogLevel.TRACE, "Client in CommentsService");
 }
@@ -19,10 +20,8 @@ constructor(private http: Http, private loggingService: LoggingService) {
           .map(response => response.json());
   }
 
-  // todo there is no play method which matches this
-  // fix this
- /* getPost(id) {
+ getPost(id) {
       return this.http.get(this.endpoint + '/' +  id)
           .map(response => response.json());
-  }*/
+  }
 }

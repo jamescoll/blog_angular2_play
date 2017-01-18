@@ -35,6 +35,8 @@ export class HomepageComponent implements OnInit {
             result => this.posts = result,
             error => console.error('Error: ')
         );
+
+        
     }
 
     ngOnInit() {

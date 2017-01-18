@@ -53,18 +53,16 @@ export class PostComponent implements OnInit {
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
 
-
             // Post
-            // todo fix issue with error reporting here we may need to return an error
             this.p.getPost(id).subscribe(
-                r => this.posts = r
-               // error => console.error('Error: ' + error)
+                r => this.posts = r,
+                error => console.error('Error: ' + error)
             );
 
             // Comments
             this.c.getCommentsByPostId(id).subscribe(
-                r => this.comments = r
-                // error => console.error('Error: ' + error)
+                r => this.comments = r,
+                error => console.error('Error: ' + error)
             );
 
         });

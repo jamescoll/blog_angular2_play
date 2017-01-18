@@ -24,6 +24,14 @@ public Result getPosts() {
 
 }
 
+public Result getPost(Long id) {
+
+        Post post = Post.find.byId(id);
+
+        return ok(Json.toJson(post));
+
+}
+
 
 /*@Transactional
 @BodyParser.Of(BodyParser.Json.class)
