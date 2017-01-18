@@ -4,11 +4,13 @@
 
 GET     /s_posts                        controllers.PostController.getPosts()
 
-GET     /s_posts/:id                     controllers.PostController.getPost(id: Long)
+GET     /s_posts/:id                    controllers.PostController.getPost(id: Long)
 
 GET     /s_comments                     controllers.CommentController.getComments()
 
 POST    /s_logging                      controllers.ClientLogController.receiveLogEntry()
+
+POST    /s_login                        controllers.LoginController.login()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)

@@ -36,7 +36,18 @@ libraryDependencies ++= Seq(
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
+    //typescript support
     "org.webjars.npm" % "typescript" % "2.0.3",
+
+     //jwt play and angular support
+    "com.nimbusds" % "nimbus-jose-jwt" % "3.8.2",
+    "org.webjars.npm" % "angular2-jwt" % "0.1.24",
+    
+    //jbcrypt hashing support
+    "org.mindrot" % "jbcrypt" % "0.3m",
+
+     //deadbolt support
+    "be.objectify" %% "deadbolt-java" % "2.5.3",
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "2.1.0",

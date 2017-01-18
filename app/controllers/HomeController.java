@@ -5,7 +5,7 @@ import play.mvc.Result;
 
 public class HomeController extends Controller {
 
-public Result index(String path) {
-        return ok( views.html.index.render());
-}
+        public Result index(String path) {
+                return ok( views.html.index.render());
+        }
 }
